@@ -1,47 +1,51 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پخش آهنگ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Aaron Smith - Dancin</title>
     <style>
-        body, html {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            width: 100%;
             height: 100%;
-            overflow: hidden; /* جلوگیری از اسکرول */
+            overflow: hidden;
+            background: #000;
         }
-        .song-image {
-            width: 100%; /* عرض تصویر به اندازه کل صفحه */
-            height: 100%; /* ارتفاع تصویر به اندازه کل صفحه */
-            object-fit: cover; /* تنظیم تصویر برای پوشش کامل */
-            cursor: pointer; /* نشان دادن اینکه تصویر قابل کلیک است */
+
+        #cover {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            cursor: pointer;
+            display: block;
         }
-        audio {
-            display: none; /* پنهان کردن دکمه پخش */
+
+        #audio {
+            display: none;
         }
     </style>
 </head>
 <body>
-
-    <img src="file_00000000f15c71f7a78e606137f4f321.png" alt="آهنگ Dancin" class="song-image" onclick="togglePlay()">
-    
-    <audio id="audio">
-        <source src="Aaron Smith - Dancin - 320.mp3" type="audio/mpeg">
-        مرورگر شما از این فرمت پشتیبانی نمی‌کند.
-    </audio>
+    <img id="cover" src="file_00000000f15c71f7a78e606137f4f321.png" alt="Album Cover">
+    <audio id="audio" src="Aaron Smith - Dancin - 320.mp3"></audio>
 
     <script>
+        const cover = document.getElementById('cover');
         const audio = document.getElementById('audio');
 
-        function togglePlay() {
+        cover.addEventListener('click', function() {
             if (audio.paused) {
                 audio.play();
             } else {
                 audio.pause();
             }
-        }
+        });
     </script>
-
 </body>
 </html>
