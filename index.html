@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پخش آهنگ: Dancin</title>
+    <title>پخش آهنگ</title>
     <style>
-        .hidden-audio {
-            display: none; /* پنهان کردن دکمه پخش */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* جلوگیری از اسکرول */
         }
         .song-image {
+            width: 100%; /* عرض تصویر به اندازه کل صفحه */
+            height: 100%; /* ارتفاع تصویر به اندازه کل صفحه */
+            object-fit: cover; /* تنظیم تصویر برای پوشش کامل */
             cursor: pointer; /* نشان دادن اینکه تصویر قابل کلیک است */
+        }
+        audio {
+            display: none; /* پنهان کردن دکمه پخش */
         }
     </style>
 </head>
 <body>
 
-    <h1>آهنگ: Dancin</h1>
     <img src="file_00000000f15c71f7a78e606137f4f321.png" alt="آهنگ Dancin" class="song-image" onclick="togglePlay()">
     
-    <audio id="audio" class="hidden-audio">
+    <audio id="audio">
         <source src="Aaron Smith - Dancin - 320.mp3" type="audio/mpeg">
         مرورگر شما از این فرمت پشتیبانی نمی‌کند.
     </audio>
